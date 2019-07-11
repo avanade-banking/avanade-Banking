@@ -14,6 +14,10 @@ const appRoutes: Routes = [
     {
         path: 'transfer',
         loadChildren: () => import('./transfer/transfer.module').then(m => m.TransferModule)
+    },
+    {
+        path: 'extract',
+        loadChildren: () => import('./extract/extract.module').then(m => m.ExtractModule)
     }
 ];
 
