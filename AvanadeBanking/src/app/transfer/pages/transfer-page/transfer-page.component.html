@@ -1,1 +1,48 @@
-<p>transfer-page works!</p>
+<div class="row height-100vh">
+    <div class="col-lg-2 p-0 orange darken-2 height-100">
+       <nav class="nav flex-column py-4">
+          <a class="nav-link white-text" [routerLink]="['transfer']">Transferências</a>
+          <a class="nav-link white-text" [routerLink]="['extract']">Extratos</a>
+       </nav>
+    </div>
+    
+    <div class="col">
+       <div class="content m-5">
+ 
+          <div class="table-responsive text-nowrap">
+           
+             
+
+                <!-- Default form login -->
+        <form class="text-center border border-light p-5" action="#!">
+
+            <p class="h4 mb-4">Transferência</p>
+
+            <div class="row">
+                <div div class="col-sm-4">
+                     <!-- Agencia -->
+                    <input type="text" id="agencia" class="form-control mb-4" placeholder="Agência">
+
+                    <!-- Conta Corrente -->
+                    <input type="text" id="contaCorrente" class="form-control mb-4" placeholder="Conta Corrente">
+
+                    <!-- Valor -->
+                    <input type="text" id="valor" class="form-control mb-4" placeholder="Valor">
+
+                    <!-- button transferir -->
+                    <button class="btn btn-orange btn-block my-4" type="submit">Transferir</button> 
+                </div>
+
+                <div div class="col-sm">
+                    <img src="assets/image/transferencia.jpg" class="img-fluid z-depth-1" alt="1">
+                </div>
+            </div>
+
+        </form>
+
+          </div>
+ 
+          
+       </div>
+    </div>
+ </div>
