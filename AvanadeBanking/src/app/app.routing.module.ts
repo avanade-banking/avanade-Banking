@@ -10,6 +10,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    },
+    {
+        path: 'transfer',
+        loadChildren: () => import('./transfer/transfer.module').then(m => m.TransferModule)
     }
 ];
 

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
-const homeRoutes: Routes = [
+const loginRoutes: Routes = [
 
     {
         path: '',
@@ -12,7 +12,7 @@ const homeRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [ RouterModule.forChild(homeRoutes) ],
+    imports: [ RouterModule.forChild(loginRoutes) ],
     exports: [ RouterModule ],
 })
 export class LoginRoutingModule { }
