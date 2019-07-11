@@ -1,1 +1,27 @@
-<p>login-page works!</p>
+<div class="row height-100vh justify-content-center grey lighten-4">
+   <div class="col-lg-6">
+      <div class="content m-5">
+
+
+         <!-- Default form login -->
+         <form class="text-center border border-light p-5">
+
+            <p class="h4 mb-4">Senha de acesso:</p>
+            
+            <div *ngIf="route == '/login'">
+               {{ route }}
+            </div>
+
+            <!-- Password -->
+            <input type="password" id="password" class="form-control" placeholder="Senha">
+
+            <!-- Sign in button -->
+            <button class="btn btn-orange btn-block my-3" type="submit">Entrar</button>
+
+         </form>
+         <!-- Default form login -->
+
+
+      </div>
+   </div>
+</div>
