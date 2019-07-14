@@ -13,7 +13,7 @@ export class PageExtractComponent implements OnInit {
   validToken: boolean =  false;
   userName: string;
   userAccount;
-  userExtract;
+  userExtract: any;
   token;
 
   constructor(private authService: AuthService, private routes: Router) { }
@@ -39,9 +39,11 @@ export class PageExtractComponent implements OnInit {
     
     return this.authService.getExtract(account, token).subscribe(infos => {
       // console.log("INFOS EXTRACT do return: ", infos);
-      let data = JSON.stringify(infos)
-      this.userExtract = JSON.parse(data);
-      console.log("## INFOS: ", this.userExtract)
+      // let data = JSON.stringify(infos)
+      // this.userExtract = JSON.parse(data);
+      // console.log("## INFOS: ", this.userExtract)
+      console.log(infos);
+      this.userExtract = infos;
     });
   }
   setUserDeposit(account, value){
@@ -60,7 +62,7 @@ export class PageExtractComponent implements OnInit {
     // this.setUserDeposit("46019-8", parseInt("500"));
 
     // faz a listagem inicial do extrato, passar conta do usuario
-    this.getUserExtract("46019-8");
+    this.getUserExtract("90106-4");
   }
 
 }
