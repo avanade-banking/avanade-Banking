@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
 
     this.validMessage = true;
     setTimeout(() => {
-      this.routes.navigateByUrl('/extract');
+      this.routes.navigateByUrl('/painel');
     }, 1500);
   }
 

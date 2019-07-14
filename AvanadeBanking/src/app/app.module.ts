@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HeaderComponent } from './shared/components/header/header.component';
@@ -12,7 +15,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

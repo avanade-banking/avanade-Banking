@@ -18,6 +18,10 @@ const appRoutes: Routes = [
     {
         path: 'extract',
         loadChildren: () => import('./extract/extract.module').then(m => m.ExtractModule)
+    },
+    {
+        path: 'painel',
+        loadChildren: () => import('./painel/painel.module').then(m => m.PainelModule)
     }
 ];
 
