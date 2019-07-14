@@ -4,3 +4,6 @@
 .ng-valid.ng-touched{
    border-color: #aea;
 }
+.alert-text{
+   font-size: 14px;
+}

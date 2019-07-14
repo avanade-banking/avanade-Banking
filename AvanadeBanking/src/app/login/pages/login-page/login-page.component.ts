@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -10,21 +11,31 @@ export class LoginPageComponent implements OnInit {
 
   route = '';
   password = '';
+  cpf = '';
   validMessage = false;
   statusMessage = 'Seja bem-vindo!';
 
-  constructor(private routes: Router) { }
+  constructor(private routes: Router, private authService: AuthService) { }
 
   entrar() {
-    if (this.password === '') {
-      alert("Campo senha não pode ser vazio");
+    if (this.cpf === '' && this.password === '') {
+      alert("Preencha todos os campos!");
       return;
     }
 
-    this.validMessage = true;
-    setTimeout(() => {
-      this.routes.navigateByUrl('/extract');
-    }, 1500);
+    this.authService.login(this.cpf, this.password).subscribe(value => {
+      console.log("LOGOU!", value);
+      
+      this.validMessage = true;
+      localStorage.setItem('TOKEN_LOGIN', value.token);
+      localStorage.setItem('USER_ID', value.user._id);
+      localStorage.setItem('USER_NAME', value.user.name);
+
+      setTimeout(() => {
+        this.routes.navigateByUrl('/extract');
+      }, 500);
+    });
+
   }
 
   ngOnInit() {

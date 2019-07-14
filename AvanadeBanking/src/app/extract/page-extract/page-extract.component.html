@@ -1,5 +1,5 @@
 <div class="row height-100vh">
-   <div class="col-lg-2 p-0 orange darken-2 height-100">
+   <div class="col-lg-2 p-0 orange darken-2 height-100 height-auto-mobile">
       <nav class="nav flex-column py-4">
          <a class="nav-link white-text" [routerLink]="['transfer']">Transferências</a>
          <a class="nav-link white-text" [routerLink]="['extract']">Extratos</a>
@@ -7,42 +7,30 @@
    </div>
    <div class="col">
       <div class="content m-5">
+         <h3 class="p-3 text-center">Seja bem-vindo(a), {{ userName }}</h3>
+         <p class="px-3 py-0"><strong>Conta:</strong> {{ userExtract.account }}</p>
+         <p class="px-3 py-0 alert"><strong>Saldo:</strong> {{ userExtract.balance }}</p>
 
-
-         <div class="table-responsive text-nowrap">
+         <div class="table-responsive text-nowrap" *ngIf="userExtract.extract.length > 0; else noExtract">
             <table class="table table-striped">
                <thead>
                   <tr>
                      <th scope="col">Data</th>
-                     <th scope="col">Descrição</th>
-                     <th scope="col">Valor</th>
+                     <th scope="col">Informações</th>
                   </tr>
                </thead>
                <tbody>
-                  <tr>
-                     <th scope="row">11/07/19</th>
-                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
-                     <td>R$100,00</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">10/07/19</th>
-                     <td>Lorem ipsum dolor sit amet.</td>
-                     <td>R$85,00</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">05/07/19</th>
-                     <td>Lorem ipsum dolor sit amet consectetur adipisicing elit</td>
-                     <td>R$100,00</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">02/07/19</th>
-                     <td>Lorem ipsum dolor sit amet.</td>
-                     <td>R$85,00</td>
+                  <tr *ngFor="let extract of userExtract.extract">
+                     <th scope="row">{{ extract.date }}</th>
+                     <td>{{ extract.status }}</td>
                   </tr>
                </tbody>
             </table>
          </div>
 
+         <ng-template #noExtract>
+            <h4 class="alert alert-success">Não há movimentações na sua conta.</h4>
+         </ng-template>
          
       </div>
    </div>

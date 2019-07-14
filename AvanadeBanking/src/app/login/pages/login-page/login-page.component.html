@@ -4,12 +4,19 @@
          
          <form class="text-center border border-light p-5">
             <p class="h4 mb-4">Senha de acesso:</p>
+
+            <input class="form-control mb-2" type="text" name="cpf" id="cpf" [(ngModel)]="cpf" required #cpfError="ngModel" placeholder="CPF"/>
+
             <input class="form-control" type="password" name="password" id="password" [(ngModel)]="password" required #passwordError="ngModel" placeholder="Senha"/>
-            <div *ngIf="passwordError.errors && passwordError.touched">
-               <p *ngIf="passwordError?.errors.required" class="text-danger p-1">Senha é obrigatória</p>
-            </div>
+
             <a class="btn btn-orange btn-block my-3" (click)="entrar()">Entrar</a>
-            <p *ngIf="validMessage">{{ statusMessage }}</p>
+            <div *ngIf="cpfError.errors && cpfError.touched">
+               <p *ngIf="cpfError?.errors.required" class="text-danger alert-text">CPF é obrigatório</p>
+            </div>
+            <div *ngIf="passwordError.errors && passwordError.touched">
+               <p *ngIf="passwordError?.errors.required" class="text-danger alert-text">Senha é obrigatória</p>
+            </div>
+            <p *ngIf="validMessage" class="alert-text">{{ statusMessage }}</p>
          </form>
 
       </div>
