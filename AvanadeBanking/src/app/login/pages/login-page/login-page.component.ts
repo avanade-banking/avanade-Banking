@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import jwt from 'jwt-decode';
 
 @Component({
   selector: 'app-login-page',
@@ -26,6 +27,22 @@ export class LoginPageComponent implements OnInit {
     this.authService.login(this.cpf, this.password).subscribe(value => {
       console.log("LOGOU!", value);
       
+      const token = value.token
+
+      if(!token) {
+        console.log('sem token');
+        return;
+      }
+  
+      let decoded = jwt(token);
+      console.log(decoded);
+  
+      this.authService.setUser({
+        id: decoded.id,
+        name: decoded.name
+      })
+
+
       this.validMessage = true;
       localStorage.setItem('TOKEN_LOGIN', value.token);
       localStorage.setItem('USER_ID', value.user._id);

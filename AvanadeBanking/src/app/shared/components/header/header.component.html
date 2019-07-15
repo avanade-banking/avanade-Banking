@@ -1,3 +1,12 @@
+<div *ngIf="user$ | async; else deslogado">
+    <h1>Ola, {{ (user$ | async).name }}</h1>
+    <button (click)="sair()">Sair</button>
+</div>
+
+<ng-template #deslogado>
+    <h5>desolado</h5>
+</ng-template>
+
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" [routerLink]="['']">
         <img src="../../../../assets/img/logo.png" class="logo">

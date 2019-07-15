@@ -21,7 +21,7 @@
     "@angular/router": "~8.0.3",
     "bootstrap": "^4.3.1",
     "json-server": "^0.15.0",
-    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
     "mdbootstrap": "^4.8.5",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",

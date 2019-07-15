@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 // import {jsonwebtoken} from "jsonwebtoken";
 
 @Injectable({
@@ -16,7 +16,23 @@ export class AuthService {
   USER = "user";
   BASE_URI = `http://localhost:3001/${this.API_VERSION}`;
 
+  private _user = new BehaviorSubject(null);
+  currentUser = this._user.asObservable();
+
   constructor(private httpClient: HttpClient) { }
+
+  setUser(usuario) {
+    this._user.next(usuario);
+  }
+
+  logout() {
+    localStorage.removeItem('TOKEN_LOGIN');
+    this._user.next(null);
+  };
+
+  verifyToken() {
+    return !!localStorage.getItem('TOKEN_LOGIN')
+  }
 
   setDeposit(account, value, token) {
     let headers = new HttpHeaders();
