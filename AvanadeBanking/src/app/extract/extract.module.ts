@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PageExtractComponent } from './page-extract/page-extract.component';
 import { ExtractRoutingModule } from './extract.routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { ExtractRoutingModule } from './extract.routing.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ExtractRoutingModule
   ]
 })
