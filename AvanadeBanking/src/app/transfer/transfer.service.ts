@@ -8,5 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TransferService {
 
+  url = 'http://localhost:3001/v1/account/transfer';
+
   constructor(private httpClient: HttpClient ) { }
+
+  putTransfer(dataTransfer, option){
+    return this.httpClient.put(this.url, dataTransfer, option)
+  }
 }

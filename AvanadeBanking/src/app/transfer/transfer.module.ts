@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TransferPageComponent } from './pages/transfer-page/transfer-page.component';
 import { TransferRoutingModule } from './transfer.routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { TransferRoutingModule } from './transfer.routing.module';
   ],
   imports: [
     CommonModule,
-    TransferRoutingModule
+    TransferRoutingModule,
+    FormsModule,
   ]
 })
 export class TransferModule { }
