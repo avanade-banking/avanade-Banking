@@ -2,9 +2,12 @@
 
 Projeto realizado para conclusão do treinamento da Gama Academy, com o propósito de simular um Internet Banking  
 
-## Para começar
 
-Para começar, precisará clonar o repositório da API, então precisará baixar o Git : 
+
+## Alguns Passos
+
+Para começar, precisará clonar o repositório da aplicação, então precisará baixar o Git : 
+
 
 ```
 https://git-scm.com/downloads
@@ -18,43 +21,25 @@ git clone https://github.com/grdasilva/avanade-banking-backend.git
 
 ### Pré-Requisitos
 
-Para rodar a API, além do Git, precisará do Node instalado e do MongoDB Community Server para rodar o server localmente, seguem links para instalação dos dois respectivamente :
+Para rodar a aplicação, além do Git, precisará do Node instalado, Angular e do MongoDB Community Server para rodar o server localmente, seguem links para instalação dos dois respectivamente :
 
 ```
 https://nodejs.org/en/download/
 ```
-
+npm install -g @angular/cli
 ```
 https://www.mongodb.com/download-center/community
 ```
 
 ### Instalando
 
-Após ter clonado o repositório e instalado todas as dependências, vamos rodar o projeto 
+Após ter clonado o repositório, instale todas as dependências, usando o comando npm install no terminal.  
+Para rodar o projeto use: ng serve --open
 
-Para rodar o projeto recomendamos usar o VSCODE e o POSTMAN caso não queira usar o front-end da nossa aplicação, mas os passos também podem ser feitos por um terminal CMD, o primeiro passo é entrar na pasta do projeto clonado e rode este comando no terminal para restaurar as dependências internas do projeto 
 
-```
-npm install
-```
 
-## Rodar projeto
 
-Após instalar todas as dependências, rode este comando no terminal para subir o server 
 
-```
-npm run prod
-```
-
-Se tudo estiver devidamente configurado, terá esse resultado no terminal 
-
-<img width="694" alt="results-server-working" src="https://user-images.githubusercontent.com/36687523/61194214-7f25ce00-a696-11e9-96fc-6ed22b8bfef6.png">
-
-E ai podemos começar a testar as requisições, utilizando o POSTMAN, caso não esteja rodando nosso front-end, a seguir possui um link com a documentação da API, para realizar os comandos de forma correta
-
-```
-https://documenter.getpostman.com/view/7504609/SVSHrpDU?version=latest
-```
 
 ## Desenvolvido com
 
@@ -68,8 +53,11 @@ https://documenter.getpostman.com/view/7504609/SVSHrpDU?version=latest
 
 * **Guilherme Rodrigues** - *Initial work* - [grdasilva](https://github.com/grdasilva)
 * **Genilson Moraes** - *Initial work* - [geprojetos](https://github.com/geprojetos)
+* **Camila Rodrigues - *Initial work* -
+* **Lucas dos Santos - *Initial work* - 
+* **Ernane Toledo - *Initial work* - 
 
-Veja a lista de [contributors](https://github.com/grdasilva/avanade-banking-backend/contributors) que participaram do projeto
+Veja a lista de [contributors](https://github.com/avanade-banking/avanade-Banking/) que participaram do projeto
 
 ## Licença
 
