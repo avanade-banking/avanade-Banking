@@ -20,7 +20,7 @@ export class TransferPageComponent implements OnInit {
   constructor(private tranferService: TransferService, private router: Router, ) { }
 
   sendTransfer() {
-    
+
     const dataTranfer = {
       yourAccount: "11414-0",
       sendAccount: this.sendAccount,
@@ -38,15 +38,13 @@ export class TransferPageComponent implements OnInit {
     
     this.tranferService.putTransfer(dataTranfer, option)
       .subscribe((data:any) => {
-        if(data.success){
-          alert(data.success);
-          this.router.navigateByUrl('/');
-        }
-        else if(data.fail){
-          alert(data.fail)
-        }
         
+        alert(data.success);
+        this.router.navigateByUrl('/');
+           
       
+    }, (error) => {
+      alert(error.error.fail);
     });
 
   }
