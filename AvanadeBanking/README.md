@@ -51,11 +51,11 @@ Para rodar o projeto use: ng serve --open
 
 ## Autores
 
-* **Guilherme Rodrigues** - *Initial work* - [grdasilva](https://github.com/grdasilva)
-* **Genilson Moraes** - *Initial work* - [geprojetos](https://github.com/geprojetos)
-* **Camila Rodrigues** - *Initial work* -   [CamilaIT](https://github.com/CamilaIT)
-* **Lucas dos Santos** - *Initial work* -   [1lmelo](https://github.com/1lmelo)
-* **Ernane Toledo** - *Initial work* -      [ernaneaugusto](https://github.com/ernaneaugusto)
+* **Guilherme Rodrigues** - [grdasilva](https://github.com/grdasilva)
+* **Genilson Moraes** -     [geprojetos](https://github.com/geprojetos)
+* **Camila Rodrigues** -    [CamilaIT](https://github.com/CamilaIT)
+* **Lucas dos Santos** -    [1lmelo](https://github.com/1lmelo)
+* **Ernane Toledo** -       [ernaneaugusto](https://github.com/ernaneaugusto)
 
 Veja a lista de [contributors](https://github.com/avanade-banking/avanade-Banking/) que participaram do projeto
 
