@@ -27,7 +27,7 @@ export class PagePainelComponent implements OnInit {
             data: [1,3,5,10,56,65,35,53,53].reverse(),
             backgroundColor: "red",
             borderColor: "red",
-            fill: true,
+            fill: false,
           },
           {
             label: "Investimentos",
