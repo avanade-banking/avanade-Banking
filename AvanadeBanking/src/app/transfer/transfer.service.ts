@@ -14,7 +14,7 @@ export class TransferService {
 
   constructor(private httpClient: HttpClient ) { }
 
-  putTrasfer(dataTransfer, option){
+  putTransfer(dataTransfer, option){
     return this.httpClient.put(this.url, dataTransfer, option)
   }
 }

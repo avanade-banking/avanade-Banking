@@ -15,7 +15,7 @@
 
 
                 <!-- Default form login -->
-                <form class="text-center border border-light p-5" action="#!">
+                <form  class="text-center border border-light p-5" >
 
                     <p class="h4 mb-4">Transferência</p>
 
@@ -27,11 +27,11 @@
                             class="form-control mb-4" placeholder="Agência"> -->
 
                             <!-- Conta Corrente -->
-                            <input type="text" id="conta" required [(ngModel)] = "yourAccount"
+                            <input type="text" name="conta" required [(ngModel)] ="sendAccount"
                             class="form-control mb-4" placeholder="Conta">
 
                             <!-- Valor -->
-                            <input type="text" id="valor" required [(ngModel)] = "transfer"
+                            <input type="text" name="valor" required [(ngModel)] = "transfer"
                             class="form-control mb-4" placeholder="Valor">
 
                             <!-- button transferir -->

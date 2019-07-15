@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TransferService } from 'src/app/transfer/transfer.service';
-import { RouterModule, Router } from '@angular/router';
+import { TransferService } from '../../transfer.service';
+import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
+
+
 
 
 @Component({
@@ -17,6 +20,7 @@ export class TransferPageComponent implements OnInit {
   constructor(private tranferService: TransferService, private router: Router, ) { }
 
   sendTransfer() {
+    
     const dataTranfer = {
       yourAccount: "11414-0",
       sendAccount: this.sendAccount,
@@ -25,18 +29,18 @@ export class TransferPageComponent implements OnInit {
 
     const headers = {
       'Content-Type': 'application/json',
-      'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMmI3YmQzOGMyYzYzMzk0NDIxZDc4MCIsIm5hbWUiOiJGZXJuYW5kbyBQZXNzb2EiLCJpYXQiOjE1NjMxMzgxNzQsImV4cCI6MTU2MzIyNDU3NH0.tE7gBSog5U8KFyFipZ6O9SoxxsG5BRnM03Fm_d-YCrE"
+      'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMmI3YzdiOGMyYzYzMzk0NDIxZDc4MiIsIm5hbWUiOiJGZXJuYW5kbyBPdXRyYSBQZXNzb2EiLCJpYXQiOjE1NjMxNjI5MTQsImV4cCI6MTU2MzI0OTMxNH0.ouYPpNKjoHuq9g8PfYIb9MhjXiziyfN_D0XG4uAiI8o"
     }
 
     const option = {
-      headers: new Headers(headers)
+      headers: new HttpHeaders(headers)
     }
-
-    this.tranferService.putTrasfer(dataTranfer, option)
+    
+    this.tranferService.putTransfer(dataTranfer, option)
       .subscribe((data:any) => {
         if(data.success){
           alert(data.success);
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/');
         }
         else if(data.fail){
           alert(data.fail)

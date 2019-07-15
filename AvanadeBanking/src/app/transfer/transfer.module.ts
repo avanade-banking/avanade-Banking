@@ -6,6 +6,7 @@ import { TransferPageComponent } from './pages/transfer-page/transfer-page.compo
 import { TransferRoutingModule } from './transfer.routing.module';
 
 
+
 @NgModule({
   declarations: [
     TransferPageComponent
