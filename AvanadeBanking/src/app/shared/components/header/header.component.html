@@ -39,6 +39,8 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Olá, {{ (user$ | async).name }}</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" [routerLink]="['/extract']">Extrato</a>
+                        <a class="dropdown-item" [routerLink]="['/transfer']">Transferência</a>
                         <a class="dropdown-item" (click)="sair()">Sair</a>
                     </div>
                 </li>
