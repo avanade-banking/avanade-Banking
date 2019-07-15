@@ -11,6 +11,7 @@ export class AuthService {
   API_VERSION = "v1";
   ACCOUNTS = "accounts";
   ACCOUNT = "account";
+  ACCOUNT_SEARCH = "searchAccount";
   LOGIN = "sigin";
   DEPOSIT = "deposit";
   USER = "user";
@@ -40,9 +41,9 @@ export class AuthService {
       headers = headers.set('x-access-token', token)
     }
     return this.httpClient
-      .put(`${this.BASE_URI}/${this.ACCOUNT}/${this.DEPOSIT}`, 
-      { account, value }, 
-      { headers: headers }
+      .put(`${this.BASE_URI}/${this.ACCOUNT}/${this.DEPOSIT}`,
+        { account, value },
+        { headers: headers }
       );
   }
 
@@ -58,6 +59,15 @@ export class AuthService {
     return this.httpClient
       .get(`${this.BASE_URI}/${this.ACCOUNT}/${accountNumber}`, { headers: headers });
   }
+  getAccountId(id, token) {
+    console.log('estou no metodo');
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('x-access-token', token)
+    }
+    return this.httpClient.get(`${this.BASE_URI}/${this.ACCOUNT}/${this.ACCOUNT_SEARCH}/${id}`, 
+    { headers: headers });
+  }
 
   getToken() {
     //   this.routes.navigateByUrl('/extract');
@@ -65,7 +75,7 @@ export class AuthService {
     console.log("getToken(): ", token)
     return token;
   }
-  
+
   getUserName() {
     const token = localStorage.getItem('USER_NAME');
     return token;

@@ -1,12 +1,3 @@
-<div *ngIf="user$ | async; else deslogado">
-    <h1>Ola, {{ (user$ | async).name }}</h1>
-    <button (click)="sair()">Sair</button>
-</div>
-
-<ng-template #deslogado>
-    <h5>desolado</h5>
-</ng-template>
-
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" [routerLink]="['']">
         <img src="../../../../assets/img/logo.png" class="logo">
@@ -19,34 +10,48 @@
 
     <div class="collapse navbar-collapse" id="basicExampleNav">
         <ul class="navbar-nav ml-auto">
-<!--             
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['']">Abra sua conta</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['transfer']">Transferências</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['extract']">Extrato</a>
-            </li> 
-            -->
+            <!--             
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['']">Abra sua conta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['transfer']">Transferências</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['extract']">Extrato</a>
+                </li> 
+                -->
 
             <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Item 1</a>
-                    <a class="dropdown-item" href="#">Item 2</a>
-                </div>
-            </li> -->
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Item 1</a>
+                        <a class="dropdown-item" href="#">Item 2</a>
+                    </div>
+                </li> -->
         </ul>
         <div style="border-left: 1px solid orange; height: 80px; margin-right: 1%;"></div>
-        <form class="form-inline">
-            <div class="md-form my-0" style="display: grid">
-                <span class="acesse">Acesse sua conta:</span>
-                <input class="form-control mr-sm-2" type="text" placeholder="Seu CPF" aria-label="CPF" size="30" />
-            </div>
-            <a [routerLink]="['login']" class="btn btn-orange">Acessar</a>
-        </form>
+        <!--  -->
+        <div *ngIf="user$ | async; else deslogado">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Olá, {{ (user$ | async).name }}</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" (click)="sair()">Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <ng-template #deslogado>
+            <form class="form-inline">
+                <div class="md-form my-0" style="display: grid">
+                    <span class="acesse">Já possui uma conta?</span>
+                    <a [routerLink]="['login']" class="btn btn-orange">Acessar minha conta</a>
+                </div>
+            </form>
+        </ng-template>
     </div>
 </nav>
